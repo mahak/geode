@@ -2287,6 +2287,15 @@ public class DistributionStats implements DMStats {
   }
 
   @Override
+  public long getSenderBufferSize(boolean direct) {
+    if (direct) {
+      return stats.getLong(senderDirectBufferSizeId);
+    } else {
+      return stats.getLong(senderHeapBufferSizeId);
+    }
+  }
+
+  @Override
   public void incMessagesBeingReceived(boolean newMsg, int bytes) {
     if (newMsg) {
       stats.incInt(messagesBeingReceivedId, 1);

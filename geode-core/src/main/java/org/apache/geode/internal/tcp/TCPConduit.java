@@ -305,14 +305,14 @@ public class TCPConduit implements Runnable {
         logger.warn("exception parsing p2p.idleConnectionTimeout", e);
       }
 
-      s = p.getProperty("membership_port_range_start");
+      s = p.getProperty("membership_port_range_start", "" + DEFAULT_MEMBERSHIP_PORT_RANGE[0]);
       try {
         tcpPortRange[0] = Integer.parseInt(s);
       } catch (Exception e) {
         logger.warn("Exception parsing membership-port-range start port.", e);
       }
 
-      s = p.getProperty("membership_port_range_end");
+      s = p.getProperty("membership_port_range_end", "" + DEFAULT_MEMBERSHIP_PORT_RANGE[1]);
       try {
         tcpPortRange[1] = Integer.parseInt(s);
       } catch (Exception e) {

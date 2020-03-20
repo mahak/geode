@@ -800,6 +800,11 @@ public class LonerDistributionManager implements DistributionManager {
     public void incSenderBufferSize(int inc, boolean direct) {}
 
     @Override
+    public long getSenderBufferSize(boolean direct) {
+      return 0;
+    }
+
+    @Override
     public long startSocketLock() {
       return 0;
     }

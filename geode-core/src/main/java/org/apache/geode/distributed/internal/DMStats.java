@@ -475,6 +475,8 @@ public interface DMStats extends MembershipStatistics {
    */
   void incSenderBufferSize(int inc, boolean direct);
 
+  long getSenderBufferSize(boolean direct);
+
   /**
    * @since GemFire 5.0.2.4
    */
